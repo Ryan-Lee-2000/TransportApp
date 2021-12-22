@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/checkBusStop">
+
+<!--    <activity-->
+<!--        android:id="@+id/mainActivity"-->
+<!--        android:name="com.example.transportapp.MainActivity"-->
+<!--        android:label="activity_main"-->
+<!--        tools:layout="@layout/activity_main" />-->
+    <fragment
+        android:id="@+id/checkBusStop"
+        android:name="com.example.transportapp.fragment.CheckBusStop"
+        android:label="check_bus_stop_fragment"
+        tools:layout="@layout/check_bus_stop_fragment" />
+    <fragment
+        android:id="@+id/nav_busstop"
+        android:name="com.example.transportapp.fragment.CheckBusStop"
+        android:label="check_bus_stop_fragment"
+        tools:layout="@layout/check_bus_stop_fragment" />
+    <fragment
+        android:id="@+id/nav_buscheck"
+        android:name="com.example.transportapp.fragment.CheckBusStop"
+        android:label="check_bus_stop_fragment"
+        tools:layout="@layout/check_bus_stop_fragment" />
+    <fragment
+        android:id="@+id/favBusStops"
+        android:name="com.example.transportapp.fragment.FavBusStop"
+        android:label="fav_bus_stop_fragment"
+        tools:layout="@layout/fav_bus_stops" />
+    <action
+        android:id="@+id/action_show_checkBusStop"
+        app:destination="@id/checkBusStop"
+        app:popUpTo="@id/checkBusStop"
+        />
+    <action
+        android:id="@+id/action_show_favBusStop"
+        app:destination="@id/favBusStops"
+        app:popUpTo="@id/favBusStops"
+        />
+</navigation>

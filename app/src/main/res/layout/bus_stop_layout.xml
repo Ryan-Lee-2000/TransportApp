@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/bus_number_border"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/bus_number"
+            android:layout_width="76dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bus_number_border"
+            android:fontFamily="@font/codystar"
+            android:gravity="center"
+            android:text="161"
+            android:textColor="#FF9600"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/first_bus_seats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.052"
+            app:layout_constraintStart_toEndOf="@+id/bus_number"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.466"
+            app:srcCompat="@drawable/seat_available" />
+
+        <ImageView
+            android:id="@+id/second_bus_seats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.144"
+            app:layout_constraintStart_toEndOf="@+id/first_bus_type"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.466"
+            app:srcCompat="@drawable/standing_available" />
+
+        <ImageView
+            android:id="@+id/third_bus_seats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/second_bus_seats"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.356"
+            app:layout_constraintStart_toEndOf="@+id/second_bus_time"
+            app:layout_constraintTop_toTopOf="@+id/second_bus_seats"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/standing_limited" />
+
+        <TextView
+            android:id="@+id/first_bus_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/codystar"
+            android:text="03:15"
+            android:textColor="#FF9600"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/first_bus_seats"
+            app:layout_constraintTop_toTopOf="@+id/first_bus_seats"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/second_bus_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/codystar"
+            android:text="03:15"
+            android:textColor="#FF9600"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/second_bus_seats"
+            app:layout_constraintTop_toTopOf="@+id/second_bus_seats"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/third_bus_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/codystar"
+            android:text="03:15"
+            android:textColor="#FF9600"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/third_bus_seats"
+            app:layout_constraintTop_toTopOf="@+id/third_bus_seats"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/first_bus_type"
+            android:layout_width="54dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/codystar"
+            android:gravity="center"
+            android:text="Double"
+            android:textColor="#FF9600"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/first_bus_seats"
+            app:layout_constraintEnd_toEndOf="@+id/first_bus_time"
+            app:layout_constraintHorizontal_bias="0.166"
+            app:layout_constraintStart_toEndOf="@+id/first_bus_seats"
+            app:layout_constraintTop_toBottomOf="@+id/first_bus_time"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/second_bus_type"
+            android:layout_width="54dp"
+            android:layout_height="18dp"
+            android:fontFamily="@font/codystar"
+            android:gravity="center"
+            android:text="Double"
+            android:textColor="#FF9600"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/second_bus_seats"
+            app:layout_constraintEnd_toEndOf="@+id/second_bus_time"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/second_bus_seats"
+            app:layout_constraintTop_toBottomOf="@+id/second_bus_time"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/third_bus_type"
+            android:layout_width="54dp"
+            android:layout_height="18dp"
+            android:fontFamily="@font/codystar"
+            android:gravity="center"
+            android:text="Single"
+            android:textColor="#FF9600"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/third_bus_seats"
+            app:layout_constraintEnd_toEndOf="@+id/third_bus_time"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/third_bus_seats"
+            app:layout_constraintTop_toBottomOf="@+id/third_bus_time"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>
+
