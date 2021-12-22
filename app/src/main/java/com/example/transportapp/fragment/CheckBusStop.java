@@ -63,16 +63,6 @@ public class CheckBusStop extends Fragment {
 
         binding = CheckBusStopFragmentBinding.inflate(inflater, container, false);
 
-        binding.button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                System.out.println("Hello, pressing button");
-                Editable text = binding.busStopNumber.getText();
-                String busStop = text.toString();
-                grabBusStop.postValue(busStop);
-            }
-        });
-
         grabBusStop.observe(getViewLifecycleOwner(), busStop -> {
             System.out.println("Hello, button was indeed pressed");
             if(start){
@@ -189,7 +179,7 @@ public class CheckBusStop extends Fragment {
         for(int i = 0; i < busTimings.size(); i++){
             sortBusTimings[i] = Integer.parseInt(busTimings.get(i).busNumber);
         }
-        for(int i = 0; i < sortBusTimings.length; i++){
+        for(int i = 0; i < sortBusTimings.length - 1; i++){
             int temp;
             if(sortBusTimings[i] > sortBusTimings[i+1]){
                 temp = sortBusTimings[i];
@@ -271,6 +261,7 @@ public class CheckBusStop extends Fragment {
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
+                binding.listOfBusTimings.removeAllViews();
                 LinearLayout listOfBusTimings = binding.listOfBusTimings;
                 for (BusTiming busTiming: busTimings) {
                     View view = LayoutInflater.from(getContext()).inflate(R.layout.bus_stop_layout, null);
@@ -306,6 +297,7 @@ public class CheckBusStop extends Fragment {
                                     firstBusType.setText("BENDY");
                                     break;
                                 }
+                                firstBusType.setText("");
                                 break;
                             case 1:
                                 if(busTiming.bustype2.equals("SD")){
@@ -320,6 +312,7 @@ public class CheckBusStop extends Fragment {
                                     secondBusType.setText("BENDY");
                                     break;
                                 }
+                                secondBusType.setText("");
                                 break;
                             case 2:
                                 if(busTiming.bustype3.equals("SD")){
@@ -334,9 +327,13 @@ public class CheckBusStop extends Fragment {
                                     thirdBusType.setText("BENDY");
                                     break;
                                 }
+                                thirdBusType.setText("");
                                 break;
                         }
                     }
+                    firstBusSeats.setVisibility(View.VISIBLE);
+                    secondBusSeats.setVisibility(View.VISIBLE);
+                    thirdBusSeats.setVisibility(View.VISIBLE);
                     for(int i = 0; i < 3; i++){
                         switch (i){
                             case 0:
@@ -352,7 +349,7 @@ public class CheckBusStop extends Fragment {
                                     firstBusSeats.setImageDrawable(getResources().getDrawable(R.drawable.standing_limited));
                                     break;
                                 }
-                                firstBusSeats.setImageDrawable(getResources().getDrawable(R.drawable.empty));
+                                firstBusSeats.setVisibility(View.INVISIBLE);
                                 break;
                             case 1:
                                 if(busTiming.loadCapacity2.equals("SEA")){
@@ -367,7 +364,7 @@ public class CheckBusStop extends Fragment {
                                     secondBusSeats.setImageDrawable(getResources().getDrawable(R.drawable.standing_limited));
                                     break;
                                 }
-                                secondBusSeats.setImageDrawable(getResources().getDrawable(R.drawable.empty));
+                                secondBusSeats.setVisibility(View.INVISIBLE);
                                 break;
                             case 2:
                                 if(busTiming.loadCapacity3.equals("SEA")){
@@ -382,7 +379,7 @@ public class CheckBusStop extends Fragment {
                                     thirdBusSeats.setImageDrawable(getResources().getDrawable(R.drawable.standing_limited));
                                     break;
                                 }
-                                thirdBusSeats.setImageDrawable(getResources().getDrawable(R.drawable.empty));
+                                thirdBusSeats.setVisibility(View.INVISIBLE);
                                 break;
 
                         }
